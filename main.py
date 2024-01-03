@@ -23,10 +23,10 @@ class AgeCalculator(QWidget):
         grid.addWidget(date_birth_label, 1, 0)  # row, column 1.0
         grid.addWidget(date_birth_line_edit, 1, 1)  # row, column 1.1
 
-    self.setLayout(grid)  ##this method is inherited by the QWidget
+        self.setLayout(grid)  ##this method is inherited by the QWidget
 
 
 app = QApplication(sys.argv)
 age_calculator = AgeCalculator()
-age_calculator.show
+age_calculator.show()
 sys.exit(app.exec())
