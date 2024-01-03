@@ -1,16 +1,32 @@
-# This is a sample Python script.
+from PyQt6.QtWidgets import QApplication, QLabel, QWidget, QGridLayout, QLineEdit, QPushButton
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+##First commit
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import sys
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class AgeCalculator(QWidget):
+    def __init__(self):
+        super().__init__()
+        grid = QGridLayout()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        # create widgets
+        name_label = QLabel("Name:")
+        name_line_edit = QLineEdit()
+
+        date_birth_label = QLabel("Date of Birth MM/DD/YYYY:")
+        date_birth_line_edit = QLineEdit()
+
+        # Add widgets to grid
+        grid.addWidget(name_label, 0, 0)  # row, column 0.0
+        grid.addWidget(name_line_edit, 0, 1)  # row, column 0.1
+        grid.addWidget(date_birth_label, 1, 0)  # row, column 1.0
+        grid.addWidget(date_birth_line_edit, 1, 1)  # row, column 1.1
+
+    self.setLayout(grid)  ##this method is inherited by the QWidget
+
+
+app = QApplication(sys.argv)
+age_calculator = AgeCalculator()
+age_calculator.show
+sys.exit(app.exec())
